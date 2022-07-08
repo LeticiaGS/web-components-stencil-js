@@ -4,9 +4,21 @@ Stencil is a compiler for building fast web apps using Web Components.
 
 Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.  Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
 
-Stencil components are just Web Components, so they work in any major framework or with no framework at all. In many cases, Stencil can be used as a drop in replacement for traditional frontend frameworks given the capabilities now available in the browser, though using it as such is certainly not required.
+## Learnings
+- When you initialize the variable you don't need to declare its type
+- The Host unlike the div, it serves to wrap the elements but is not rendered in the html
+- When i push my new task array it doesnt update state. To solve this, we created a new array with everything we had in the other one (...this,task) and adc my new task (ev.detail)
+```typescript
 
-Stencil also enables a number of key capabilities on top of Web Components, in particular Server Side Rendering (SSR) without the need to run a headless browser, pre-rendering, and objects-as-properties (instead of just strings).
+handleAdd = (ev: CustomEvent) => {
+    this.tasks = [
+     ...this.tasks,
+      ev.detail
+    ]
+  }
+```
+- Whenever you are going to refer to a child event you need to put on+EventName (with CamelCase)
+- It is necessary to transform the function into an **arrow function** because the browser executes it at some point, somehow, but it doesn't know that it refers to our TodoComponent class. With arrow function, the context of this will be based on where it was created, that is, its this will be referenced to the ToDoComponent
 
 ## Getting Started
 
