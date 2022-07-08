@@ -1,0 +1,19 @@
+ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background-color: #048a81;
+  color: white;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  list-style: none;
+  line-height: 2;
+}
+
+li:first-of-type {
+  margin-top: 2rem;
+}
